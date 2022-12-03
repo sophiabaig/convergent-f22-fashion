@@ -19,38 +19,38 @@ const Tab = createBottomTabNavigator();
 
 export default function MainContainer() {
     return (
-       <NavigationContainer>
+        <NavigationContainer>
             <Tab.Navigator
-            initialRouteName={profileName}
-            screenOptions={({route}) => ({
-                tabBarIcon: ({focused, color, size}) => {
-                    let iconName;
-                    let rn = route.name;
+                initialRouteName={profileName}
+                screenOptions={({ route }) => ({
+                    tabBarIcon: ({ focused, color, size }) => {
+                        let iconName;
+                        let rn = route.name;
 
-                    if (rn === profileName) {
-                        iconName = focused ? 'person' : 'person-outline';
-                    } else if (rn === shoppingName) {
-                        iconName = focused ? 'shirt' : 'shirt-outline';
-                    } else if (rn === likesName) {
-                        iconName = focused ? 'heart' : 'heart-outline';
-                    } else if (rn === cartName) {
-                        iconName = focused? 'cart' : 'cart-outline';
-                    }
+                        if (rn === profileName) {
+                            iconName = focused ? 'person' : 'person-outline';
+                        } else if (rn === shoppingName) {
+                            iconName = focused ? 'shirt' : 'shirt-outline';
+                        } else if (rn === likesName) {
+                            iconName = focused ? 'heart' : 'heart-outline';
+                        } else if (rn === cartName) {
+                            iconName = focused ? 'cart' : 'cart-outline';
+                        }
 
-                    return <Ionicons name={iconName} size={size} color={color}></Ionicons>
-                },
-                tabBarStyle: { padding: 10, height: 90 },
-                tabBarActiveTintColor: 'green',
-                tabBarInactiveTintColor: 'grey',
-            })}
+                        return <Ionicons name={iconName} size={size} color={color}></Ionicons>
+                    },
+                    tabBarStyle: { padding: 10, height: 90 },
+                    tabBarActiveTintColor: 'green',
+                    tabBarInactiveTintColor: 'grey',
+                })}
             >
 
-            <Tab.Screen name={profileName} component={ProfileScreen}></Tab.Screen>
-            <Tab.Screen name={shoppingName} component={ShoppingScreen}></Tab.Screen>
-            <Tab.Screen name={likesName} component={LikesScreen}></Tab.Screen>
-            <Tab.Screen name={cartName} component={CartScreen}></Tab.Screen>
+                <Tab.Screen name={profileName} component={ProfileScreen}></Tab.Screen>
+                <Tab.Screen name={shoppingName} component={ShoppingScreen}></Tab.Screen>
+                <Tab.Screen name={likesName} component={LikesScreen}></Tab.Screen>
+                <Tab.Screen name={cartName} component={CartScreen}></Tab.Screen>
             </Tab.Navigator>
 
-       </NavigationContainer>
+        </NavigationContainer>
     );
 }
